@@ -15,11 +15,11 @@ The Campus Navigation and Transportation App is designed to improve mobility and
 | **Name**         | **Github profile**                |
 |------------------|-------------------------|
 | **Lethabo Letsoalo**      | https://github.com/DARILETS         |
-| **Uhone Nndwamato**    |           |
+| **Uhone Nndwamato**    | https://github.com/Here06           |
 | **Kgolagano Matlapeng**     | https://github.com/AisuZukinaOtoko          |
 | **Maboa Wendy** | https://github.com/wendymaboa       |
-| **Gael Joao** | https://github.com/2556575       |
-| **Obakeng** |        |
+| **Gael Joao** | https://github.com/souoGael      |
+| **Obakeng** | https://github.com/2556575        |
 
 ---
 
