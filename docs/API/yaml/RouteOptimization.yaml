@@ -1,0 +1,220 @@
+openapi: 3.0.0
+info:
+  title: Route Optimization API
+  description: API for calculating and providing optimal routes based on current conditions
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/2541693/RouteOptimization/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /routes/optimize:
+    get:
+      tags:
+      - Route
+      description: Calculates the optimal route based on current conditions.
+      operationId: getOptimizedRoute
+      parameters:
+      - name: startLocation
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uri
+      - name: endLocation
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uri
+      - name: waypoints
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: uri
+      - name: avoid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          example:
+          - tolls
+          - highways
+          items:
+            type: string
+      - name: transportMode
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: driving
+          enum:
+          - driving
+          - walking
+          - cycling
+      - name: currentConditions
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+          default: true
+      responses:
+        "200":
+          description: The optimal route based on current conditions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+  /routes/estimates:
+    get:
+      tags:
+      - Route
+      description: Provides estimated travel time and distance for a route without optimization.
+      operationId: getRouteEstimates
+      parameters:
+      - name: startLocation
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uri
+      - name: endLocation
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uri
+      - name: waypoints
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: uri
+      - name: transportMode
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: driving
+          enum:
+          - driving
+          - walking
+          - cycling
+      responses:
+        "200":
+          description: Estimated travel time and distance
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+components:
+  schemas:
+    Route:
+      type: object
+      properties:
+        distance:
+          type: number
+          format: float
+        duration:
+          type: number
+          format: float
+        steps:
+          type: array
+          items:
+            type: string
+    OptimizedRoute:
+      type: object
+      properties:
+        optimizedDistance:
+          type: number
+          format: float
+        optimizedDuration:
+          type: number
+          format: float
+        optimizedSteps:
+          type: array
+          items:
+            type: string
+    Estimate:
+      type: object
+      properties:
+        estimatedDistance:
+          type: number
+          format: float
+        estimatedDuration:
+          type: number
+          format: float
+    inline_response_200:
+      type: object
+      properties:
+        route:
+          $ref: '#/components/schemas/inline_response_200_route'
+        optimizedRoute:
+          $ref: '#/components/schemas/inline_response_200_optimizedRoute'
+    inline_response_200_1:
+      type: object
+      properties:
+        estimatedDistance:
+          type: number
+          format: float
+        estimatedDuration:
+          type: number
+          format: float
+    inline_response_200_route:
+      type: object
+      properties:
+        distance:
+          type: number
+          format: float
+        duration:
+          type: number
+          format: float
+        steps:
+          type: array
+          items:
+            type: string
+    inline_response_200_optimizedRoute:
+      type: object
+      properties:
+        optimizedDistance:
+          type: number
+          format: float
+        optimizedDuration:
+          type: number
+          format: float
+        optimizedSteps:
+          type: array
+          items:
+            type: string
