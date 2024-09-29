@@ -76,7 +76,7 @@ If you want to interact with the prototype
 ![alt text](./Images/profileUI.png)
 - **Add a profile page**: The image above is the implemented profile page on our system, shows you booked vehicles, it has it's own kudubucks system.
 - **Add a change password feature on the Profile page**: Below is an image that kind of shows how a user can change their password on the profile page, they click the "change password link" and a pop up will show up, and they can either cancel or change their password.
-- **Add Renting stations on the map**: We decided to add a bicycle landmark to everyn rental station on main campus.
+- **Add Renting stations on the map**: We decided to add a bicycle landmark to every rental station on main campus.
 - **Add pickup and dropoff stations**:🐾
 - **Add more implementations luca required**:🐾
 ### Changes we discussed 

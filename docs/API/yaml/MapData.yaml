@@ -1,0 +1,406 @@
+openapi: 3.0.0
+info:
+  title: Map Data API
+  description: "Retrieve and update map data, including buildings, routes, and amenities."
+  version: "1"
+servers:
+- url: https://virtserver.swaggerhub.com/WendyMaboa/CampusTransportation/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /buildings:
+    get:
+      tags:
+      - Buildings
+      description: Retrieve all buildings
+      operationId: getBuildings
+      parameters:
+      - name: skip
+        in: query
+        description: Number of records to skip
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: limit
+        in: query
+        description: Maximum number of records to return
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A list of buildings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Building'
+    post:
+      tags:
+      - Buildings
+      description: Add a new building
+      operationId: addBuilding
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Building'
+        required: true
+      responses:
+        "201":
+          description: Building successfully added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /buildings/{buildingId}:
+    get:
+      tags:
+      - Buildings
+      description: Get details of a specific building
+      operationId: getBuildingById
+      parameters:
+      - name: buildingId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Details of the building
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Building'
+    put:
+      tags:
+      - Buildings
+      description: Update building information
+      operationId: updateBuilding
+      parameters:
+      - name: buildingId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Building'
+        required: true
+      responses:
+        "200":
+          description: Building successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    delete:
+      tags:
+      - Buildings
+      description: Delete a building
+      operationId: deleteBuilding
+      parameters:
+      - name: buildingId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Building successfully deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /routes:
+    get:
+      tags:
+      - Routes
+      description: Retrieve all routes
+      operationId: getRoutes
+      parameters:
+      - name: skip
+        in: query
+        description: Number of records to skip
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: limit
+        in: query
+        description: Maximum number of records to return
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A list of routes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Route'
+    post:
+      tags:
+      - Routes
+      description: Add a new route
+      operationId: addRoute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Route'
+        required: true
+      responses:
+        "201":
+          description: Route successfully added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /routes/{routeId}:
+    get:
+      tags:
+      - Routes
+      description: Get details of a specific route
+      operationId: getRouteById
+      parameters:
+      - name: routeId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Details of the route
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+    put:
+      tags:
+      - Routes
+      description: Update route information
+      operationId: updateRoute
+      parameters:
+      - name: routeId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Route'
+        required: true
+      responses:
+        "200":
+          description: Route successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    delete:
+      tags:
+      - Routes
+      description: Delete a route
+      operationId: deleteRoute
+      parameters:
+      - name: routeId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Route successfully deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /amenities:
+    get:
+      tags:
+      - Amenities
+      description: Retrieve all amenities
+      operationId: getAmenities
+      responses:
+        "200":
+          description: A list of amenities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Amenity'
+    post:
+      tags:
+      - Amenities
+      description: Add a new amenity
+      operationId: addAmenity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Amenity'
+        required: true
+      responses:
+        "201":
+          description: Amenity successfully added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /amenities/{amenityId}:
+    get:
+      tags:
+      - Amenities
+      description: Get details of a specific amenity
+      operationId: getAmenityById
+      parameters:
+      - name: amenityId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Details of the amenity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Amenity'
+    put:
+      tags:
+      - Amenities
+      description: Update amenity information
+      operationId: updateAmenity
+      parameters:
+      - name: amenityId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Amenity'
+        required: true
+      responses:
+        "200":
+          description: Amenity successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    delete:
+      tags:
+      - Amenities
+      description: Delete an amenity
+      operationId: deleteAmenity
+      parameters:
+      - name: amenityId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Amenity successfully deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+components:
+  schemas:
+    Building:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        address:
+          type: string
+        coordinates:
+          $ref: '#/components/schemas/Building_coordinates'
+        description:
+          type: string
+    Route:
+      type: object
+      properties:
+        id:
+          type: string
+        origin:
+          $ref: '#/components/schemas/Building'
+        destination:
+          $ref: '#/components/schemas/Building'
+        distance_km:
+          type: number
+          format: double
+        path:
+          type: array
+          items:
+            $ref: '#/components/schemas/Building_coordinates'
+    Amenity:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        coordinates:
+          $ref: '#/components/schemas/Building_coordinates'
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+    Building_coordinates:
+      type: object
+      properties:
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
