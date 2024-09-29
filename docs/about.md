@@ -130,7 +130,7 @@ For proof of meeting please checkout our drive "campus transportation>Meetings" 
 ## Testing
 
 Hello Uhone👋 for testing i would like you to add The pages you've tested
-How you did it you don't have to be specific, what did u use to test, jest etc
+How you did it you don't have to be specific,types of tests user acceptane tests, unit test, integration tests idk what did u use to test, jest etc
 code coverage and maybe also add some bit  of a report summary.
 
 
