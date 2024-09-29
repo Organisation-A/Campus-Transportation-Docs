@@ -83,7 +83,7 @@ If you want to interact with the prototype
 - **Change the theme of the app**: Now we added a feature for light/dark mode 
 - **Add accessible routes on the map**:🐾
 ### Changes after integrating with other APIs
-See "Link to implementations in the API specification"🐾
+See "https://organisation-a.github.io/Campus-Transportation-Docs/#/api"
 
 ## Meetings
 
