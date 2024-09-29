@@ -23,7 +23,7 @@ The Campus Navigation and Transportation App is designed to improve mobility and
 
 ---
 
-# Links📄
+## Links📄
 
 - **Our Github repo**: https://github.com/AisuZukinaOtoko/Group-A
 - **Our Drive**: https://drive.google.com/drive/u/0/folders/0AEQCx68po5DiUk9PVA

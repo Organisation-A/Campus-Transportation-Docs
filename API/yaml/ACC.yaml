@@ -1,0 +1,320 @@
+openapi: 3.0.0
+info:
+  title: home-iot-api
+  description: The API for the EatBacon IOT project
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/2541693/Accessibility/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /accessible-routes:
+    get:
+      tags:
+      - Accessible Routes
+      description: Retrieves a list of accessible routes based on criteria.
+      operationId: getAccessibleRoutes
+      parameters:
+      - name: start
+        in: query
+        description: Start point for route search
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: end
+        in: query
+        description: End point for route search
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: features
+        in: query
+        description: "Accessibility features to filter routes by (e.g., ramps, elevators)"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of accessible routes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AccessibleRoute'
+    post:
+      tags:
+      - Accessible Routes
+      description: Adds a new accessible route.
+      operationId: addAccessibleRoute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessibleRouteInput'
+      responses:
+        "201":
+          description: Route created successfully
+  /accessible-routes/{routeId}:
+    get:
+      tags:
+      - Accessible Routes
+      description: Retrieves detailed information about a specific route.
+      operationId: getAccessibleRoute
+      parameters:
+      - name: routeId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Detailed information about the route
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessibleRouteDetails'
+    put:
+      tags:
+      - Accessible Routes
+      description: Updates details for an existing accessible route.
+      operationId: updateAccessibleRoute
+      parameters:
+      - name: routeId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessibleRouteInput'
+      responses:
+        "200":
+          description: Route updated successfully
+    delete:
+      tags:
+      - Accessible Routes
+      description: Deletes a specific accessible route.
+      operationId: deleteAccessibleRoute
+      parameters:
+      - name: routeId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Route deleted successfully
+  /accessible-facilities:
+    get:
+      tags:
+      - Accessible Facilities
+      description: Retrieves a list of accessible facilities.
+      operationId: getAccessibleFacilities
+      parameters:
+      - name: type
+        in: query
+        description: "Type of facility to filter by (e.g., restrooms, parking)"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: location
+        in: query
+        description: "Location to filter facilities by (e.g., city or coordinates)"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of accessible facilities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AccessibleFacility'
+    post:
+      tags:
+      - Accessible Facilities
+      description: Adds a new accessible facility.
+      operationId: addAccessibleFacility
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessibleFacilityInput'
+      responses:
+        "201":
+          description: Facility created successfully
+  /accessible-facilities/{facilityId}:
+    get:
+      tags:
+      - Accessible Facilities
+      description: Retrieves detailed information about a specific facility.
+      operationId: getAccessibleFacility
+      parameters:
+      - name: facilityId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Detailed information about the facility
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessibleFacilityDetails'
+    put:
+      tags:
+      - Accessible Facilities
+      description: Updates details for an existing accessible facility.
+      operationId: updateAccessibleFacility
+      parameters:
+      - name: facilityId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessibleFacilityInput'
+      responses:
+        "200":
+          description: Facility updated successfully
+    delete:
+      tags:
+      - Accessible Facilities
+      description: Deletes a specific accessible facility.
+      operationId: deleteAccessibleFacility
+      parameters:
+      - name: facilityId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Facility deleted successfully
+components:
+  schemas:
+    AccessibleRoute:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        path:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccessibleRoute_path'
+        features:
+          type: array
+          items:
+            type: string
+    AccessibleRouteDetails:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        path:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccessibleRoute_path'
+        features:
+          type: array
+          items:
+            type: string
+        notes:
+          type: string
+    AccessibleFacility:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        location:
+          $ref: '#/components/schemas/AccessibleRoute_path'
+        features:
+          type: array
+          items:
+            type: string
+    AccessibleFacilityDetails:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        location:
+          $ref: '#/components/schemas/AccessibleRoute_path'
+        features:
+          type: array
+          items:
+            type: string
+        contact:
+          type: string
+    AccessibleRouteInput:
+      type: object
+      properties:
+        description:
+          type: string
+        path:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccessibleRoute_path'
+        features:
+          type: array
+          items:
+            type: string
+    AccessibleFacilityInput:
+      type: object
+      properties:
+        name:
+          type: string
+        location:
+          $ref: '#/components/schemas/AccessibleRoute_path'
+        features:
+          type: array
+          items:
+            type: string
+        contact:
+          type: string
+    AccessibleRoute_path:
+      type: object
+      properties:
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
