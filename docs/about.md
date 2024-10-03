@@ -88,10 +88,24 @@ The Map Card feature enhances user interaction with the map by providing options
 - **Status** : The Map Card feature is fully implemented and operational, offering users a versatile and customizable mapping experience.
 
 ### Transport Schedule page
+The Transport Schedule Page provides users with comprehensive information about bus schedules, helping them plan their travel efficiently. Users get to see Types of Schedule,Bus Schedule Display and Interactive Features
 
+- **User benefit** : Provides clear and organized access to bus schedule information, aiding in effective trip planning.
+- **Dependecies** : We get the latest bus schedule from the wits website.
+- **Status** : The Transport Schedule Page is fully operational and provides users with essential bus schedule information
 ### Rentals Page
+The Rentals Page allows users to book a single vehicle from the available bus schedules, providing a convenient way to secure transportation for their travel needs.
+- **User benefit** : Provides clarity on available options and limits bookings to one vehicle, reducing the chances of overbooking.
+- **Dependecies** : An active internet connection is necessary for real-time updates and booking confirmations.
+- **Status** : The Rentals Page is fully functional and allows users to easily book vehicles from the available bus schedules.
 
 ### Logout Page
+The Logout Page provides users with a straightforward and secure way to end their session within the app.
+When users navigate to the logout page, they are presented with a confirmation message that asks if they are sure they want to log out. This prevents accidental logouts.
+
+- **User benefit** : Enhances security by providing a clear and deliberate logout process, minimizing the risk of unauthorized access,Gives users confidence that their session has been successfully terminated.
+- **Dependecies** : Requires integration with the authentication system to securely log users out.
+- **Status** : The Logout Page is fully implemented and operational, allowing users to log out of their accounts securely and efficiently.
 
 ## Tools
 - **Jira**: For planning.
@@ -170,8 +184,11 @@ As seen from the Calendar we have been tracking when to have out meetings and we
 For proof of meeting please checkout our drive "campus transportation>Meetings" :https://drive.google.com/drive/u/0/folders/1zxj784kdAtxYXiMoWFnsLQTfLaxCZ4dK
 #### Scrum 1 🎯
 #### 12 August 2024 
+- objective:
 - Dicussion: Tools, setting up our environment and getting started
 - Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues:
+- Goals:
 #### 14 August 2024
 - Dicussion: Designing Wireframe and assigning roles
 - Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy

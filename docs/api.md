@@ -29,6 +29,8 @@ With this API doc, users can :
 ## Rental Service API
 <iframe src="./API/RentalServiceAPI.html" width="100%" height="800px"></iframe>
 
+## Internal APIs
+## OUR external APIs
 
 ## Implementation
 
