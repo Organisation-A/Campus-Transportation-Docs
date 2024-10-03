@@ -28,3 +28,27 @@ With this API doc, users can :
 
 ## Rental Service API
 <iframe src="./API/RentalServiceAPI.html" width="100%" height="800px"></iframe>
+
+
+## Implementation
+
+### Using the Emergency Alert API
+
+We have decided to implement a popup feature that will appear during emergency situations, displaying the time of the emergency and relevant information. This popup will prevent the user from interacting with any other features of the app until they acknowledge the alert and take the necessary steps to evacuate the premises.
+
+
+*Picture of the implementation*
+
+### Using the Events API
+
+We decided to add a uique landmark on the map that show up when there's an event on campus.
+
+*Picture of the implementation*
+
+## Communication with the other teams
+
+### Campus safety - Emergency Alert API
+
+
+### Event Management - Events API
+
