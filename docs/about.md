@@ -20,19 +20,77 @@ other transportation services
 - **Rental Stations**: Locate and check availability of rental stations across campus.
 
 ## Feature list
-### Login Page
+A feature list in app documentation is a detailed outline of the key functionalities or capabilities of an application. It provides a clear, structured summary of what the app can do, serving as a quick reference for developers, users, or stakeholders to understand the main offerings of the app. Each feature may include a brief description of its purpose and how it benefits the user.
+###  User Login and Password Management
+Users can log in by entering their credentials, including email and password. The password must meet certain requirements, such as a minimum length and the inclusion of special characters. If a user forgets their password, they can use the "Forgot Password" feature to reset it, and a confirmation email will be sent to them for verification.
+
+- **User benefit** : Provides secure access to accounts with password validation for enhanced security. The "Forgot Password" feature ensures users can regain access to their accounts if needed.
+
+- **Dependecies** : Requires a valid email address for account creation and password reset functionality. Email service must be configured to send confirmation emails.
+
+- **Status** : Available and fully functional.
+
 ### Singup Page
+New users can create an account by providing the following information:Username,Email address, and a password.
+- **User benefit** : Email verification ensures that only valid accounts are created,Strong password requirements help enhance account security..
+- **Dependecies** : A valid email address is required for signup and email verification.
+- **Status** : Available and fully functional.
+
 ### Sidemenu
+The side menu provides easy navigation to the following sections of the app:
+- **Home Page**
+- **Profile Page**
+- **Bus Schedule Page**
+- **Rentals Page**
+- **Logout Page**
+
+- **User benefit** : Convenient navigation to essential app features,Simplifies returning to the homepage or securely logging out from the app.
+- **Dependecies** : The profile, bus schedule, and rentals pages require users to be logged in.
+- **Status** : Available and fully functional.
+
 ### Search Bar
-#### Filtered serach list
+Allows users to look up for locations around campus.
+#### Filtered search list
+Users are able to search up locations around campus and get help from the filtered list they won't have to type up the whole name of the location.
 #### Results 
+The search result consist of the picture of the list and description.
+
+
+- **User benefit** : it is faster for users to lookup places, users get to have a picture of what the place they're looking for looks like.
+- **Dependecies** :  Requires internet access for search queries.
+- **Status** : Available and fully functional.
+
 ### Map
+The Maps feature integrates Google Maps into the app, allowing users to explore various locations and landmarks related to rentals.
 #### Locations - Popup Information
+When you interact with the landmarks or locations on the map, you get a mini-popup about the location
 #### Rentals landmarks
+We added bicycle,car,skateboard landmarks on the map to show available rentals. when you interact with the landmarks, you can see if you have to dropoff there or it's too far from your current location.
 #### Dark/Light mode feature
+you can change the map from light mode and back to dark mode.
+
+
+- **User benefit** : Easy navigation and exploration of rental landmarks through an interactive map,Informative popups enhance the user experience by providing relevant details about each location.
+- **Dependecies** : Requires an active internet connection for Google Maps to function properly,Google Maps API must be integrated and configured within the ap
+- **Status** : The Maps feature is fully implemented and operational, providing users with a seamless experience in exploring rental landmarks.
 ### Profile page
+The Profile Page provides users with a personalized overview of their account information, change password feature, including their username, email, kudubucks balance, and current rental details.
+
+- **User benefit** : Provides a quick and easy way for users to view their account details and current rentals,Enhances user engagement by displaying kudubucks,
+- **Dependecies** : Requires user authentication to access profile information,Rental data must be linked to the user’s account for accurate display.
+- **Status** : The Profile Page is fully functional and provides a comprehensive overview of user information.
+
+### Home Page
+The Map Card feature enhances user interaction with the map by providing options to customize the map's theme and view directions based on their preferred mode of transportation.
+
+- **User benefit** : Personalizes the map experience, catering to individual user preferences for theme and navigation style.
+- **Dependecies** : Requires integration with mapping services (e.g., Google Maps API) to implement theme changes and generate accurate directions based on user selection,An active internet connection is necessary for real-time map updates and navigation features.
+- **Status** : The Map Card feature is fully implemented and operational, offering users a versatile and customizable mapping experience.
+
 ### Transport Schedule page
+
 ### Rentals Page
+
 ### Logout Page
 
 ## Tools
@@ -85,7 +143,7 @@ If you want to interact with the prototype
 ## Implementations
 
 ### Changes requested by our supervisor
-- **Add some validation on the login/signup**: At the beginning of our app the user just had to put in their detail in this an email and password but after our meeting with our supervisor on the 5th of september, He suggested that we coudld have some validation for our password, like having special characters in our pasword also the having a specific length for the password. On top that we added a toast that pops everytime the user's password doesn't satisfy the requirements.
+- **Add some validation on the login/signup**: At the beginning of our app the user just had to put in their detail in this an email and password but after our meeting with our supervisor on the 5th of september, He suggested thAvailable and fully functional.at we coudld have some validation for our password, like having special characters in our pasword also the having a specific length for the password. On top that we added a toast that pops everytime the user's password doesn't satisfy the requirements.
 - **Add a hello {username} feature**: Every user has their name and email stored in the database such everytime when they log in to our system, on the profile page their usename printed out.Like the image below.
 ![alt text](./Images/profileUI.png)
 - **Add a profile page**: The image above is the implemented profile page on our system, shows you booked vehicles, it has it's own kudubucks system.
@@ -144,3 +202,8 @@ For proof of meeting please checkout our drive "campus transportation>Meetings" 
 ## Reports
 🐾
 - On the 12th of August we had issues with trying to deploy the "Hello-world" page
+- We had problems with communicating with Campus safety group a their apis required ids which we didn't get
+- Events group did not provide their APIs instead they gave us their API documentation
+- We had problems trying to deploy using AZURE so we tried out vercel
+- Our app takes an hour to deploy
+- We ran out of credits on firestore so we had to upgrade.
