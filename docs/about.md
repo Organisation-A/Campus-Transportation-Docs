@@ -159,12 +159,16 @@ If you want to interact with the prototype
 ### Changes requested by our supervisor
 - **Add some validation on the login/signup**: At the beginning of our app the user just had to put in their detail in this an email and password but after our meeting with our supervisor on the 5th of september, He suggested thAvailable and fully functional.at we coudld have some validation for our password, like having special characters in our pasword also the having a specific length for the password. On top that we added a toast that pops everytime the user's password doesn't satisfy the requirements.
 - **Add a hello {username} feature**: Every user has their name and email stored in the database such everytime when they log in to our system, on the profile page their usename printed out.Like the image below.
+
 ![alt text](./Images/newProfilepage.png)
+
 - **Add a profile page**: The image above is the implemented profile page on our system, shows you booked vehicles, it has it's own kudubucks system.
 - **Add a change password feature on the Profile page**: Below is an image that kind of shows how a user can change their password on the profile page, they click the "change password link" and a pop up will show up, and they can either cancel or change their password.
 - **Add Renting stations on the map**: We decided to add a bicycle landmark to every rental station on main campus.
 - **Add pickup and dropoff stations**: Every user should be able to dropoff their vehicle to the nearest dropoff station
+
 ![alt text](./Images/dropoff.png)
+
 - **Add more fuctionality to the rentals page**: We decided that the user should be able to dropoff their vehicle to the nearest station and instead of canceling their ride they should either complete their request or drop off their vehicle but they will still be charged.
 ### Changes we discussed 
 - **Change the theme of the app**: Now we added a feature for light/dark mode 
@@ -314,7 +318,7 @@ For proof of meeting please checkout our drive "campus transportation>Meetings" 
 - Goals: Implementations.
 #### 05 October 2024 Milestone 3 🏆
 
-### User Guide 
+## User Guide 
 Welcome to the User Guide for our app! This guide will walk you through the key features and how to use them effectively.
 ### Getting Started
 
@@ -387,7 +391,7 @@ The app has a powerful search feature:
 
 - To log out of the app, simply click on **Logout** from the side menu. This will safely end your session.
 
-### User Feedback 
+## User Feedback 
 
 #### Client feedback
 "Our app looks great so far there's Progress but requires more functionality and depth"

@@ -18,7 +18,7 @@ With this API doc, users can :
 *Put the swagger thing here🐾*
 *fix the swagger ui stuff based on our actual APIs*
 
-## Rental Service API
+## Rental Service API 🐾
 <iframe src="./API/RentalServiceAPI.html" width="100%" height="800px"></iframe>
 
 ## Internal and External APIs
@@ -60,7 +60,7 @@ The POST APIs require the user ID (`UID`) and rented item ID (`ritem`) as argume
 
 We recommend using **axios** for making API requests.
 
-*APIS OBAKENG USED*
+*APIS OBAKENG USED*🐾
 
 ## Implementation
 
@@ -73,14 +73,17 @@ We have decided to implement a popup feature that will appear during emergency s
 
 We decided to add a uique landmark on the map that show up when there's an event on campus.
 
-*Picture of the implementation*
+*Picture of the implementation*🐾
 
 ## Communication with the other teams
 
 ### Campus safety - Emergency Alert API
-
+![alt text](./Images/safetyCOM1.png)
+![alt text](./Images/safetyCOM2.png)
 
 ### Event Management - Events API
+![alt text](./Images/eventsCOm1.png)
+![alt text](./Images/eventsCOM2.png)
 
 ### Campus Infrastructure
-
+![alt text](./Images/infraCOM1.png)
