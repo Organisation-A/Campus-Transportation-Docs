@@ -159,17 +159,18 @@ If you want to interact with the prototype
 ### Changes requested by our supervisor
 - **Add some validation on the login/signup**: At the beginning of our app the user just had to put in their detail in this an email and password but after our meeting with our supervisor on the 5th of september, He suggested thAvailable and fully functional.at we coudld have some validation for our password, like having special characters in our pasword also the having a specific length for the password. On top that we added a toast that pops everytime the user's password doesn't satisfy the requirements.
 - **Add a hello {username} feature**: Every user has their name and email stored in the database such everytime when they log in to our system, on the profile page their usename printed out.Like the image below.
-![alt text](./Images/profileUI.png)
+![alt text](./Images/newProfilepage.png)
 - **Add a profile page**: The image above is the implemented profile page on our system, shows you booked vehicles, it has it's own kudubucks system.
 - **Add a change password feature on the Profile page**: Below is an image that kind of shows how a user can change their password on the profile page, they click the "change password link" and a pop up will show up, and they can either cancel or change their password.
 - **Add Renting stations on the map**: We decided to add a bicycle landmark to every rental station on main campus.
-- **Add pickup and dropoff stations**:🐾
-- **Add more implementations luca required**:🐾
+- **Add pickup and dropoff stations**: Every user should be able to dropoff their vehicle to the nearest dropoff station
+![alt text](./Images/newProfilepage.png)
+- **Add more fuctionality to the rentals page**: We decided that the user should be able to dropoff their vehicle to the nearest station and instead of canceling their ride they should either complete their request or drop off their vehicle but they will still be charged.
 ### Changes we discussed 
 - **Change the theme of the app**: Now we added a feature for light/dark mode 
 - **Add accessible routes on the map**:🐾
 ### Changes after integrating with other APIs
-See "Link to implementations in the API specification"🐾
+See "https://organisation-a.github.io/Campus-Transportation-Docs/#/api"
 
 ## Meetings
 
@@ -184,33 +185,134 @@ As seen from the Calendar we have been tracking when to have out meetings and we
 For proof of meeting please checkout our drive "campus transportation>Meetings" :https://drive.google.com/drive/u/0/folders/1zxj784kdAtxYXiMoWFnsLQTfLaxCZ4dK
 #### Scrum 1 🎯
 #### 12 August 2024 
-- objective:
+- objective: What tools we need to use
 - Dicussion: Tools, setting up our environment and getting started
 - Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
-- issues:
-- Goals:
+- issues: Which tools would be easier to use.
+- Goals: Be familiar with react, start up jira, create accounts and create a repo.
 #### 14 August 2024
+- objective: Completing the UI
 - Dicussion: Designing Wireframe and assigning roles
 - Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: Picking a consistent theme
+- Goals: Evaluate everyone's idea and pick the best choice and implement it
 #### 17 August 2024
+- objective: Implementing the Best UI and planning our database
 - Dicussion: UI designs and database schema,API
 - Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: What happens when we run out of credits.
+- Goals: Code the basic UI
 #### 18 August 2024
+- objective: Fix the prototype
 - Dicussion: UI design and Prototype
 - Attendees: Uhone, Lethabo, Gael, Wendy
+- issues: None
+- Goals: Code the basic UI
 #### 20 August 2024 Milestone 1 🏆
 #### Scrum 2 🎯
 #### 24 August 2024
-- Dicussion: Milestone Overview
+- objective: Discussing Milestone 1 results
+- Dicussion: Milestone 1 Overview
 - Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: We need to communicate with other groups and send out our API specification
+- Goals: Make an API soecification
 #### 28 August 2024
+- objective: Way forward implementing what we missed in milestone 1
+- Dicussion: Milestone 1 Overview
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: it was taking time to deploy the hello page, start working our APIs
+- Goals: Work on Map Data API fix the deployment issue.
 #### 29 August 2024
+- objective: showing our progress to our client
+- Dicussion: Client Meeting
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy, Luca
+- issues: API development
+- Goals: Implement the features our client requested
+#### 04 September 2024
+- objective: Progress on the features our client requested
+- Dicussion: Client Meeting
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: Fixing buggy pages
+- Goals: Implement the features our client requested
+#### 05 September 2024
+- objective: Overview of the requested features
+- Dicussion: Client Meeting
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy, Luca
+- issues: Fixing buggy pages
+- Goals: Implementations.
+#### 11 September 2024
+- objective: Progress on the features our client requested
+- Dicussion: Client Meeting,
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: Fixing buggy pages
+- Goals: Implement the features our client requested
+#### 12 September 2024
+- objective: Overview of the requested features
 - Dicussion: Client Meeting, adding more features like having a login,signup page
 - Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy, Luca
-#### 12 August 2024
-#### 12 August 2024
-#### 12 August 2024
-#### 12 August 2024
+- issues: Fixing buggy pages
+- Goals: Implementations.
+#### 14 September 2024
+- objective: Progress on the features our client requested
+- Dicussion: Client Meeting
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: Fixing buggy pages
+- Goals: Implement the features our client requested
+
+#### 17 September 2024 Milestone 2 🏆
+#### Scrum 3 🎯
+
+#### 23 September 2024
+- objective: Overview of milestone 2
+- Dicussion: Client Meeting, adding more features like having a login,signup page
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: Fixing buggy pages
+- Goals: Implement the features our client requested
+
+#### 24 September 2024
+- objective: Way forward implementing what we missed in milestone 2
+- Dicussion: Milestone 1 Overview
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: it was taking time to deploy the hello page, start working our APIs
+- Goals: Transitioning from azure to vercel and improving our work.
+#### 26 September 2024
+- objective: Overview of the requested features
+- Dicussion: Client Meeting, adding more features like having a login,signup page
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy, Luca
+- issues: Fixing buggy pages and communicating with other groups
+- Goals: Implementations.
+#### 27 September 2024
+- objective: Progress on the features our client requested
+- Dicussion: Client Meeting
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: Fixing buggy pages
+- Goals: Implement the features our client requested
+#### 28 September 2024
+- objective: Progress on the features our client requested(Daily scrum)
+- Dicussion: Client Meeting
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: Fixing buggy pages
+- Goals: Implement the features our client requested
+#### 29 September 2024
+- objective: Progress on the features our client requested(Daily scrum)
+- Dicussion: Client Meeting
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: Fixing buggy pages
+- Goals: Implement the features our client requested
+#### 30 September 2024
+- objective: Progress on the features our client requested(Daily scrum)
+- Dicussion: Client Meeting
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy
+- issues: Fixing buggy pages
+- Goals: Implement the features our client requested
+
+### 03 October 2024
+- objective: Overview of the requested features and preparation for milestone 3
+- Dicussion: Client Meeting, adding more features like having a login,signup page
+- Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy, Luca
+- issues: Fixing buggy pages and documenation
+- Goals: Implementations.
+ #### 05 October 2024 Milestone 3 🏆
 
 ### User Feedback 🐾
 

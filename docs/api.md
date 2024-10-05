@@ -22,6 +22,8 @@ With this API doc, users can :
 <iframe src="./API/RentalServiceAPI.html" width="100%" height="800px"></iframe>
 
 ## Internal APIs
+*APIS gael used*
+*APIS OBAKENG USED*
 ## OUR external APIs
 
 ## Implementation
