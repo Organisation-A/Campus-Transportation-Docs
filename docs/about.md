@@ -312,11 +312,103 @@ For proof of meeting please checkout our drive "campus transportation>Meetings" 
 - Attendees: Uhone, Kgolagano, Lethabo, Obakeng, Gael, Wendy, Luca
 - issues: Fixing buggy pages and documenation
 - Goals: Implementations.
- #### 05 October 2024 Milestone 3 🏆
+#### 05 October 2024 Milestone 3 🏆
 
-### User Feedback 🐾
+### User Guide 
+Welcome to the User Guide for our app! This guide will walk you through the key features and how to use them effectively.
+### Getting Started
 
-### User Guide 🐾
+To begin using the app, make sure you've created an account or logged in with an existing one. Here's a quick overview of the key pages and functionalities available.
+
+### Login and Signup
+
+#### Login Page
+- Enter your registered email and password to access the app.
+- If you've forgotten your password, click on the **Forgot Password** link. You'll receive an email to reset your password.
+
+#### Signup Page
+- New users can create an account by providing their email, name, and password.
+
+### Navigating the App
+
+Once you’re logged in, the side menu will give you access to various pages:
+
+- **Homepage**: Your main dashboard.
+- **Bus Schedule**: View and download bus schedules.
+- **Rental Service**: Browse and book available vehicles from rental stations.
+- **Profile**: Manage your account details and view bookings.
+- **Logout**: Sign out of the app.
+
+### Search and Map Features
+
+The app has a powerful search feature:
+
+- At the top of each page, there's a search bar. You can type in places to search, and a filter is available to narrow down the results.
+- Results include:
+  - A picture of the place
+  - A brief description
+  - The location on the map
+  
+#### Map Interaction
+- You can interact with the map to explore different places.
+- It displays locations such as:
+  - Rental stations
+  - Events happening on campus
+- Clicking on a location shows a pop-up with details about the place.
+
+### Bus Schedule
+
+#### Viewing Bus Schedules
+- On the **Bus Schedule** page, you can view different bus schedules.
+- There are multiple schedules for different routes and timings.
+
+#### Downloading Schedules
+- You have the option to download the schedule for offline use.
+
+### Rental Service
+
+#### Viewing Rental Stations
+- On the **Rental Service** page, you can view all the available rental stations around campus.
+  
+#### Booking a Vehicle
+- Each rental station displays the vehicles available for booking.
+- You can choose and book an available vehicle directly from the app.
+
+### Profile Management
+
+#### Viewing Profile
+- On the **Profile** page, you can view your:
+  - Name
+  - Email
+  - Kudubucks balance (used for rentals)
+
+#### Changing Password
+- You can change your password in the profile section for security.
+
+#### Viewing Bookings
+- You can also view your booking history in this section.
+
+### Logout
+
+- To log out of the app, simply click on **Logout** from the side menu. This will safely end your session.
+
+### User Feedback 
+
+#### Client feedback
+"Our app looks great so far there's Progress but requires more functionality and depth"
+
+### External feedback 
+
+1. User 1 : Classmate
+"The app's design is really intuitive! I love how easy it is to navigate between the different pages, and the map feature is super handy for finding locations on campus. Overall, it looks polished and professional!"
+
+2. User 2: Classmate
+"I really like the clean layout of the app, especially the side menu – it makes everything feel so organized. The search bar with filters is a great touch, and the way results are displayed with pictures and descriptions is really user-friendly."
+
+3. User 3: Roommate
+
+"The app looks amazing! I found it easy to use, and the interactive map is a standout feature for me. It's awesome to see all the rental stations and events in one place. Plus, the design looks modern and smooth!"
+
 
 ## Reports
 🐾
