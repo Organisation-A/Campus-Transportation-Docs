@@ -15,9 +15,9 @@ With this API doc, users can :
 <iframe src="./API/MapDataAPI.html" width="100%" height="800px"></iframe>
 
 ## Transportation Schedule API
-<iframe src="./API/TansportationScheduleAPI.html" width="100%" height="800px"></iframe>
+<iframe src="./API/Trans.html" width="100%" height="800px"></iframe>
 
-## Rental Service API 🐾
+## Rental Service API 
 <iframe src="./API/RentalServiceAPI.html" width="100%" height="800px"></iframe>
 
 ## Internal and External APIs
