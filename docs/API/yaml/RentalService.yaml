@@ -1,294 +1,107 @@
 openapi: 3.0.0
 info:
   title: Rental Service API
-  description: "The API for managing bike, scooter, and skateboard rentals, including availability, reservations, and returns."
-  version: "1"
+  description: The API for managing vehicle rentals
+  version: 1.0.0
 servers:
-- url: https://virtserver.swaggerhub.com/2541693/RentalService/1.0.0
+- url: https://virtserver.swaggerhub.com/NIZOLEMAKOMA4_1/rentals/1.0.0
+  description: SwaggerHub API Auto Mocking
+- url: https://virtserver.swaggerhub.com/NIZOLEMAKOMA4_1/RentalService/1.0.0
   description: SwaggerHub API Auto Mocking
 paths:
-  /availability:
+  /rentals:
     get:
       tags:
       - Rental
-      description: "Retrieve availability status of bikes, scooters, and skateboards."
-      operationId: getAvailability
+      description: Returns all available rentals
+      operationId: getRentals
       parameters:
-      - name: type
+      - name: skip
         in: query
-        description: "Filter by rental type (bike, scooter, skateboard)"
+        description: Number of records to skip
         required: false
         style: form
         explode: true
         schema:
-          type: string
-          enum:
-          - bike
-          - scooter
-          - skateboard
-      - name: location
+          type: integer
+          format: int32
+      - name: limit
         in: query
-        description: Filter by location
+        description: Max number of records to return
         required: false
         style: form
         explode: true
         schema:
-          type: string
-      - name: date
-        in: query
-        description: Check availability for a specific date and time
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          format: date-time
+          type: integer
+          format: int32
       responses:
         "200":
-          description: Availability status
+          description: A list of available rentals
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/inline_response_200'
-  /reservations:
+                  $ref: '#/components/schemas/Rental'
     post:
       tags:
       - Rental
-      description: "Create a new reservation for a bike, scooter, or skateboard."
-      operationId: createReservation
+      description: Create a new rental listing
+      operationId: createRental
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/reservations_body'
+              $ref: '#/components/schemas/Rental'
+        required: true
       responses:
         "201":
-          description: Reservation created successfully
+          description: Rental created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_201'
-  /reservations/{reservation_id}:
+                $ref: '#/components/schemas/Rental'
+  /rentals/{rentalId}:
     get:
       tags:
       - Rental
-      description: Retrieve details of a specific reservation.
-      operationId: getReservation
+      operationId: getRentalDetails
       parameters:
-      - name: reservation_id
+      - name: rentalId
         in: path
         required: true
         style: simple
         explode: false
         schema:
           type: string
-          format: uuid
       responses:
         "200":
-          description: Reservation details
+          description: Rental details
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
-    put:
-      tags:
-      - Rental
-      description: Update an existing reservation.
-      operationId: updateReservation
-      parameters:
-      - name: reservation_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          format: uuid
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/reservations_reservation_id_body'
-      responses:
-        "200":
-          description: Reservation updated successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_200_2'
-    delete:
-      tags:
-      - Rental
-      description: Cancel an existing reservation.
-      operationId: cancelReservation
-      parameters:
-      - name: reservation_id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          format: uuid
-      responses:
-        "204":
-          description: Reservation canceled successfully
-  /returns:
-    post:
-      tags:
-      - Rental
-      description: Process the return of a rented item.
-      operationId: returnItem
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/returns_body'
-      responses:
-        "200":
-          description: Return processed successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_200_3'
+                $ref: '#/components/schemas/Rental'
+        "404":
+          description: Rental not found
 components:
   schemas:
-    ApiResponse:
+    Rental:
       type: object
       properties:
-        code:
-          type: integer
-          format: int32
-        message:
+        vehicle:
           type: string
-          example: everything is ok
-    inline_response_200:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-          enum:
-          - bike
-          - scooter
-          - skateboard
+          description: The vehicle being rented
+        longitude:
+          type: number
+          description: Longitude of the rental location
+          format: float
+        latitude:
+          type: number
+          description: Latitude of the rental location
+          format: float
         location:
           type: string
-        status:
-          type: string
-          enum:
-          - available
-          - reserved
-          - out-of-service
-    reservations_body:
-      required:
-      - end_time
-      - location
-      - start_time
-      - type
-      - user_id
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-          - bike
-          - scooter
-          - skateboard
-        location:
-          type: string
-        user_id:
-          type: string
-        start_time:
-          type: string
-          format: date-time
-        end_time:
-          type: string
-          format: date-time
-    inline_response_201:
-      type: object
-      properties:
-        reservation_id:
-          type: string
-          format: uuid
-        status:
-          type: string
-          enum:
-          - confirmed
-          - pending
-    inline_response_200_1:
-      type: object
-      properties:
-        reservation_id:
-          type: string
-          format: uuid
-        type:
-          type: string
-          enum:
-          - bike
-          - scooter
-          - skateboard
-        location:
-          type: string
-        user_id:
-          type: string
-        start_time:
-          type: string
-          format: date-time
-        end_time:
-          type: string
-          format: date-time
-        status:
-          type: string
-          enum:
-          - confirmed
-          - canceled
-          - completed
-    reservations_reservation_id_body:
-      required:
-      - end_time
-      - start_time
-      type: object
-      properties:
-        start_time:
-          type: string
-          format: date-time
-        end_time:
-          type: string
-          format: date-time
-    inline_response_200_2:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - updated
-          - error
-    returns_body:
-      required:
-      - condition
-      - reservation_id
-      - return_location
-      type: object
-      properties:
-        reservation_id:
-          type: string
-          format: uuid
-        return_location:
-          type: string
-        condition:
-          type: string
-          enum:
-          - good
-          - damaged
-    inline_response_200_3:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - completed
-          - error
+          description: Description of the rental location
+        availability:
+          type: boolean
+          description: Indicates if the vehicle is available for rent
