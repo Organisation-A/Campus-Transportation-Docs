@@ -1,5 +1,5 @@
 - [Home](/)
 - [About](/about.md)
 - [API specification](/api.md)
-- [Data schema](/api.md)
+- [Data schema](/data.md)
 - [Testing](/Testing.md)
