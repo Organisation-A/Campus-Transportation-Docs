@@ -471,4 +471,4 @@ Data used for the Map Data API was manually collected and inserted into Firestor
 Resources used:
 1. The Wits website: A map with all the buildings to record into the database, with their respective descriptions.
 2. Google Earth: Coordinates of all the buildings.
-3. Google Search: Images of all the buildings
+3. Google Search: Images of all the buildings.
