@@ -14,17 +14,9 @@ With this API doc, users can :
 ## Map data API
 <iframe src="./API/MapDataAPI.html" width="100%" height="800px"></iframe>
 
-## GPS Tracking API
-<iframe src="./API/GPSTrackingAPI.html" width="100%" height="800px"></iframe>
-
-## Accessibilty API
-<iframe src="./API/ACCAPI.html" width="100%" height="800px"></iframe>
-
 ## Transportation Schedule API
-
-
-## Route Optimization API
-<iframe src="./API/RouteOptimizationAPI.html" width="100%" height="800px"></iframe>
+*Put the swagger thing here🐾*
+*fix the swagger ui stuff based on our actual APIs*
 
 ## Rental Service API
 <iframe src="./API/RentalServiceAPI.html" width="100%" height="800px"></iframe>
