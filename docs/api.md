@@ -15,8 +15,7 @@ With this API doc, users can :
 <iframe src="./API/MapDataAPI.html" width="100%" height="800px"></iframe>
 
 ## Transportation Schedule API
-*Put the swagger thing here🐾*
-*fix the swagger ui stuff based on our actual APIs*
+<iframe src="./API/TansportationScheduleAPI.html" width="100%" height="800px"></iframe>
 
 ## Rental Service API 🐾
 <iframe src="./API/RentalServiceAPI.html" width="100%" height="800px"></iframe>
