@@ -164,7 +164,7 @@ If you want to interact with the prototype
 - **Add a change password feature on the Profile page**: Below is an image that kind of shows how a user can change their password on the profile page, they click the "change password link" and a pop up will show up, and they can either cancel or change their password.
 - **Add Renting stations on the map**: We decided to add a bicycle landmark to every rental station on main campus.
 - **Add pickup and dropoff stations**: Every user should be able to dropoff their vehicle to the nearest dropoff station
-![alt text](./Images/newProfilepage.png)
+![alt text](./Images/dropoff.png)
 - **Add more fuctionality to the rentals page**: We decided that the user should be able to dropoff their vehicle to the nearest station and instead of canceling their ride they should either complete their request or drop off their vehicle but they will still be charged.
 ### Changes we discussed 
 - **Change the theme of the app**: Now we added a feature for light/dark mode 
@@ -327,12 +327,7 @@ To begin using the app, make sure you've created an account or logged in with an
 - If you've forgotten your password, click on the **Forgot Password** link. You'll receive an email to reset your password.
 
 #### Signup Page
-- New users can create an account by providing their email, name, and password.
-
-### Navigating the App
-
-Once you’re logged in, the side menu will give you access to various pages:
-
+- New users can create an account by prThe app looks amazing! I found it easy to use, and the interactive map is a standout feature for me. It's awesome to see all the rental stations and events in one place. Plus, the design looks modern and smooth!
 - **Homepage**: Your main dashboard.
 - **Bus Schedule**: View and download bus schedules.
 - **Rental Service**: Browse and book available vehicles from rental stations.
@@ -399,22 +394,22 @@ The app has a powerful search feature:
 
 ### External feedback 
 
-1. User 1 : Classmate
+1. User 1 : Classmate -
 "The app's design is really intuitive! I love how easy it is to navigate between the different pages, and the map feature is super handy for finding locations on campus. Overall, it looks polished and professional!"
 
-2. User 2: Classmate
+2. User 2: Classmate -
 "I really like the clean layout of the app, especially the side menu – it makes everything feel so organized. The search bar with filters is a great touch, and the way results are displayed with pictures and descriptions is really user-friendly."
 
-3. User 3: Roommate
-
+3. User 3: Roommate -
 "The app looks amazing! I found it easy to use, and the interactive map is a standout feature for me. It's awesome to see all the rental stations and events in one place. Plus, the design looks modern and smooth!"
 
 
 ## Reports
-🐾
 - On the 12th of August we had issues with trying to deploy the "Hello-world" page
 - We had problems with communicating with Campus safety group a their apis required ids which we didn't get
 - Events group did not provide their APIs instead they gave us their API documentation
 - We had problems trying to deploy using AZURE so we tried out vercel
 - Our app takes an hour to deploy
 - We ran out of credits on firestore so we had to upgrade.
+- We could not implement the accessibility feature as we cannot edit the google map
+- We were unable to implement the live tracking feature due to its complexity, which exceeds our current level of expertise.
