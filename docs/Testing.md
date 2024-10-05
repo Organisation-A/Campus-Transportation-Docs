@@ -311,3 +311,4 @@ The tests aim to ensure that the App component renders the expected UI elements 
         - Checks for a link to ensure that navigation links are properly rendered.
         - Verifies the existence of a button to confirm the availability of actionable elements.
 These basic checks help to validate the initial rendering of the key components within the App and provide a foundation for further testing as the project evolves.
+![alt text](./Images/testingS.png)
