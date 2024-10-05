@@ -59,7 +59,147 @@ The POST APIs require the user ID (`UID`) and rented item ID (`ritem`) as argume
 
 We recommend using **axios** for making API requests.
 
-*APIS OBAKENG USED*🐾
+### BuildingMap Component API Documentation
+
+#### Overview:
+
+The `BuildingMap` component is a React-based implementation of a Google Maps interface with additional features such as route calculation, custom markers, and user location tracking. It utilizes various Google Maps APIs and services to provide an interactive map experience.
+
+#### Dependencies:
+
+- React
+- @googlemaps/js-api-loader
+- axios
+- Firebase (auth and firestore)
+- react-toastify
+
+#### Component State:
+
+The component uses various state variables and refs to manage its functionality:
+
+- `googleMaps`: Stores the Google Maps API object
+- `userLocation`: Tracks the user's current location
+- `directions`: Stores the calculated route directions
+- `selectedMode`: Manages the selected travel mode
+- `isDarkStyle`: Controls the map's visual style
+- `userPickup`: Stores the user's pickup location
+- `UID`: Stores the user's ID
+- `selectedCoordinates`: Stores the selected destination coordinates
+
+#### Main Functions:
+
+##### `calculateDistance(lat1, lon1, lat2, lon2)`
+
+Calculates the distance between two geographical points using the Haversine formula.
+
+##### `handleDropOff(ritem)`
+
+Handles the drop-off functionality for rentals by making an API call.
+
+##### `handleDrop(location)`
+
+Checks if the user is within range of a drop-off location and calls `handleDropOff` if true.
+
+##### `calculateRoute(origin, destination)`
+
+Calculates and displays a route between two points using the Google Maps Directions Service.
+
+##### `createMarkersAndCalculateRoute(originLatLng, destinationLatLng)`
+
+Creates origin and destination markers and calculates the route between them.
+
+##### `loadPersistedRoute()`
+
+Loads a previously saved route from local storage.
+
+##### `calculateAndDisplayRoute(destination)`
+
+Calculates and displays a route from the user's current location to a specified destination.
+
+##### `addCustomLocationMarkers()`
+
+Adds custom markers to the map for predefined rental locations.
+
+##### `toggleMapStyle()`
+
+Toggles between dark and light map styles.
+
+##### `recenterMapToUserLocation()`
+
+Recenters the map to the user's current location.
+
+#### Google Maps API Usage:
+
+##### Map Initialization
+
+The component uses the `@googlemaps/js-api-loader` to load the Google Maps API:
+
+```javascript
+const loader = new Loader({
+  apiKey: "YOUR_API_KEY_HERE",
+  version: "weekly",
+  libraries: ["places"],
+});
+```
+
+##### Map Creation
+
+A new map instance is created using:
+
+```javascript
+new googleMaps.maps.Map(mapRef.current, {
+  center: userLocation,
+  zoom: 17,
+  fullscreenControl: false,
+  mapTypeControl: false,
+  zoomControl: true,
+  streetViewControl: true,
+  styles: isDarkStyle ? MapStyle : [],
+});
+```
+
+##### Directions Service and Renderer
+
+The component uses the DirectionsService and DirectionsRenderer for route calculations:
+
+```javascript
+directionsServiceRef.current = new google.maps.DirectionsService();
+directionsRendererRef.current = new google.maps.DirectionsRenderer({
+  suppressMarkers: true,
+});
+```
+
+##### Info Windows
+
+Info windows are used to display additional information when markers are clicked, implemented with `google.maps.InfoWindow`.
+
+#### User Interaction
+
+- Users can click on the map to set a destination and calculate a route.
+- Users can toggle between dark and light map styles.
+- Users can recenter the map to their current location.
+- Users can select different travel modes (Walking, Driving, Bicycling, Transit).
+- Users can view turn by turn directions for the calculated route.
+
+#### Firebase Integration
+
+The component integrates with Firebase for user authentication and data storage:
+
+- It listens for changes in the user's authentication state.
+- It fetches user data from Firestore when a user is authenticated.
+
+#### Local Storage
+
+The component uses local storage to persist:
+- The last calculated route
+- The user's preference for dark/light map style
+
+#### Event Handling
+
+The component sets up various event listeners:
+- Map click events for route calculation
+- Marker drag events for route recalculation
+- Custom 'getDirections' event for external direction requests
 
 ## Implementation
 
