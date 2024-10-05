@@ -1,6 +1,6 @@
-## Testing
+# Testing
 
-### logout.test.jsx
+## logout.test.jsx
 This file contains tests for the Logout component utilizing React Testing Library and Jest to validate the component's behavior during user interaction. The primary objective is to confirm that the component navigates correctly based on user choices.
 
 #### Purpose:
@@ -31,12 +31,12 @@ The tests verify that the SignUpForm component provides correct user feedback ha
   - Purpose: The test is both a unit test for the signup logic and a user acceptance test to ensure a smooth user flow.
   - Behavior Tested: It simulates a successful signup flow including submitting valid information verifying if createUserWithEmailAndPassword sendEmailVerification and setDoc are called appropriately and confirming the success message is displayed.
   
-- **"navigates to the login page when 'Log In' ### is clicked"**:
+- **"navigates to the login page when 'Log In' ## is clicked"**:
   - Type: Unit Test and User Acceptance Test (UAT)
   - Purpose: This test ensures that the user can navigate to the login page.
   - Behavior Tested: It checks if clicking the "Log In" link triggers the navigation to the login page ('/').
 
-### loginForm.test.jsx
+## loginForm.test.jsx
 This file contains unit and user acceptance tests for the LoginForm component. The tests use React Testing Library and Jest to validate how the component behaves during different user interactions specifically focusing on rendering password visibility and login functionality.
 
 #### Purpose:
@@ -62,7 +62,7 @@ The tests verify that the LoginForm component renders correctly handles password
   - Purpose: Tests the login flow when incorrect credentials are provided.
   - Behavior Tested: Mocks a rejected signInWithEmailAndPassword call resulting in an error toast message. As a UAT it ensures that the user gets appropriate feedback when their login attempt fails.
 
-### Profile.test.jsx
+## Profile.test.jsx
 This file contains unit and user acceptance tests for the Profile component. The tests use React Testing Library and Jest to validate how the component behaves during different user interactions specifically focusing on rendering user details password reset functionality and managing rental operations.
 
 #### Purpose:
@@ -115,7 +115,7 @@ The tests verify that the Profile component renders correctly with user details 
   - Purpose: Ensures that the Profile component displays correctly when the user has no current rental.
   - Behavior Tested: Verifies that the component displays "No current rental" when there is no active rental data for the user.
 
-### SearchBar.test.jsx
+## SearchBar.test.jsx
 This file contains unit and user acceptance tests for the SearchBar component. The tests use React Testing Library and Jest to validate how the component behaves during different user interactions, specifically focusing on search functionality, query suggestions, and the integration with building information.
 
 #### Purpose:
@@ -164,7 +164,7 @@ The tests verify that the SearchBar component renders correctly, handles search 
 
 
 
-### SideMenu.test.jsx
+## SideMenu.test.jsx
 This file contains unit tests for the SideMenu component. The tests use React Testing Library and Jest to validate the component's behavior during navigation and to ensure that the correct menu item is marked as active based on the current route.
 #### Purpose:
 The tests verify that the SideMenu component renders correctly, handles navigation properly when different menu items are clicked, and applies the appropriate active class for the selected menu item based on the current route.
@@ -227,7 +227,7 @@ The tests verify that the SideMenu component renders correctly, handles navigati
 These tests ensure that navigation is properly handled for each menu item and that the correct visual indication is provided for the active page, contributing to an intuitive user experience when interacting with the SideMenu component.
 
 
-### Homepage.test.jsx
+## Homepage.test.jsx
 This file contains a unit test for the Homepage component. The test uses React Testing Library and Jest to validate the component's behavior when the user interacts with the "Sign out" button.
 #### Purpose:
 The test verifies that the Homepage component correctly handles navigation when the "Sign out" button is clicked, ensuring that users are redirected appropriately.
@@ -242,7 +242,7 @@ Test Overview:
 This test is essential to validate the sign-out functionality, ensuring that users can effectively log out and are redirected to the appropriate page afterward.
 
 
-### BusSchedule.test.jsx
+## BusSchedule.test.jsx
 This file contains unit and user acceptance tests for the BusSchedule component. The tests use React Testing Library and Jest to verify how the component behaves during different user interactions, including rendering, filtering routes, and downloading the schedule as a PDF.
 #### Purpose:
 The tests validate that the BusSchedule component displays bus schedules correctly, allows users to filter routes, downloads the schedule as a PDF, and handles edge cases such as empty Firestore responses or missing upcoming buses.
@@ -294,7 +294,7 @@ The tests validate that the BusSchedule component displays bus schedules correct
     - Behavior Tested: Simulates selecting multiple route filters and verifies that the correct routes are displayed and styled differently.
 
 
-### App.test.jsx
+## App.test.jsx
 This file contains unit and user acceptance tests for the App component. The tests use React Testing Library and Jest to validate the presence of key elements in the component, focusing on different roles such as headings, paragraphs, textboxes, links, and buttons.
 #### Purpose:
 The tests aim to ensure that the App component renders the expected UI elements correctly when loaded, providing basic coverage for the presence of key interactive or display components.
