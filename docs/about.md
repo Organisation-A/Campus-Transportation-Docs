@@ -417,3 +417,58 @@ The app has a powerful search feature:
 - We ran out of credits on firestore so we had to upgrade.
 - We could not implement the accessibility feature as we cannot edit the google map
 - We were unable to implement the live tracking feature due to its complexity, which exceeds our current level of expertise.
+### More technical reports
+
+#### Technical Report on Deployment
+
+I have attempted deploying a React application to Azure services as a Web App service. The deployment was initially done on the free tier, but after second consideration, I scaled up to the Basic B1 tier.
+
+Issues Encountered
+
+1. NPM installation warnings.
+	-Deprecated packages such as w3c-hr-time, rimraf, rollup- plugin-terser, and others.
+	-Recommendations to update or replace certain packages due to security concerns
+
+2. Build and Test Errors.
+	-Failed a test case where a logo was imported and not used.
+
+3. Deployment Issues.
+	-504 Gateway Timeout because the server took too long
+	-Application Error : 3 minutes upon loading site
+	-Application failing to start.
+
+#### Technical Report on GitHub
+
+We used GitHub for our version control, which requires that we do some setup. In order to allow collaborators to make changes to the GitHub settings, such as editing environment variables or publishing documentation, collaborators needed admin access. To achieve this, we decided to transfer ownership of the Group-A repository to Organisation-A. Several issues happened as a direct cause of this:
+
+1. GitHub OIDC Authentication Error: The OIDC authentication failed because no matching federated identity was found for the presented assertion. This often happens when the Subject, Audience, or Issuer is not configured correctly in the Azure federated credential. After transferring ownership, the subject of our repository changed, leading to conflicts with what Azure was expecting.
+
+2. App Registration and Identity Configuration: The app was not automatically registered, leading to confusion about whether it had a managed identity associated with it.
+
+3. Deployment Failure (Not Found): 
+Deployment failed with the error: ##[debug]Deployment status: 0 'Receiving changes.'. retry after 5 seconds.
+This error occurred repeatedly until the workflow timed out or was cancelled.
+
+4. Long Deployment Time: Deployment was taking approximately 45 minutes, which is far longer than expected for typical web apps.
+
+#### Technical Report on MapBox
+
+We’ve been working on integrating Mapbox into our project, adding various features such as custom markers, paths, directions, and interactive elements. During the process, several technical issues have arisen that have impacted the smooth implementation of these features.
+
+1. Missing Key Footpaths in Default Map
+Problem: The default Mapbox maps did not include certain key footpaths critical for accurate navigation and route planning.
+
+2. Adding Custom GeoJSON Paths to Map
+Problem: We needed to load a custom GeoJSON file into the Mapbox map to show specific paths.
+
+3. Using Geolocation to Get Current Position
+Problem: We needed to retrieve the user's current location to dynamically set it as the starting point for directions at a set refresh interval.
+
+#### Technical Report on Data Collection
+
+Data used for the Map Data API was manually collected and inserted into Firestore.
+
+Resources used:
+1. The Wits website: A map with all the buildings to record into the database, with their respective descriptions.
+2. Google Earth: Coordinates of all the buildings.
+3. Google Search: Images of all the buildings
