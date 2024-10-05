@@ -118,7 +118,13 @@ When users navigate to the logout page, they are presented with a confirmation m
 
 ## Diagrams
 
-### user story🐾
+### user story
+
+![Alt Text](./Images/usediag.png)
+
+### Class diagram
+
+see "link to data schema section"
 
 ### Deployment Diagram
 
