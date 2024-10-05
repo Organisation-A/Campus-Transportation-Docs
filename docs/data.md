@@ -10,6 +10,7 @@
 Documents detailing campus buildings.
 
 #### Barnato Hall
+```javascript
 - **Description**: "Barnato Hall. Mixed-gender residence up to the age of 24 years of age (Undergraduate only). Housing 554 students in single rooms."
 - **Image**: ![Barnato Hall](data:image/jpeg;base64,MvBCc1I/E/gBGGst5TLvTL6Urn2RaE5gqm2dw7cZsnOnnJ+8Mj5W0FgNUrQpJqCEkgg8N2OfLlceKLY8WrlP6GhmX4gZAq6vzAgabf59FAHWX8A0Lpd+W)
 - **Latitude**: -26.186944
@@ -17,13 +18,14 @@ Documents detailing campus buildings.
 - **Name**: "Barnato Hall"
 - **Other Names**: ""
 - **Side**: "West"
-
+```
 ---
 
 ### Events
 Documents describing campus events.
 
 #### Beer Garden
+```javascript
 - **Date**: "5/10/2024"
 - **Description**: "Bring a friend for an exciting evening. Refreshments will be sold."
 - **End Time**: "23:00"
@@ -31,25 +33,27 @@ Documents describing campus events.
 - **Longitude**: 28.029999999999998
 - **Name**: "Beer Garden"
 - **Start Time**: "16:00"
-
+```
 ---
 
 ### Rental Station Inventory
 Documents detailing rental stations and available vehicles.
 
 #### Origin Centre Station
+```javascript
 - **Vehicle**: "Skateboards"
 - **Availability**: 7
 - **Latitude**: -26.192
 - **Longitude**: 28.028
 - **Location**: "Origin Centre"
-
+```
 ---
 
 ### Transportation Schedules
 Documents containing transportation schedules.
 
 #### Schedule Document ID: 3fqCpz6ZG434qJYrdbqY
+```javascript
 - **Days**: 
   - "Saturday"
   - "Sunday"
@@ -74,19 +78,20 @@ Documents containing transportation schedules.
   - "WJ"
   - "WEC"
   - "AMIC"
-
+```
 ---
 
 ### Users
 Documents describing users of the transportation system.
 
 #### User Document ID: 9mPofTkdTpONgS4eKYuUEWgBzZp2
+```javascript
 - **Email**: "aa@gmail.com"
 - **First Name**: "gg"
 - **Item**: "BB"
 - **Kudu**: 20
 - **Last Name**: "gg"
 - **Location**: "BB"
-
+```
 ---
 
