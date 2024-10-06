@@ -24,21 +24,49 @@ With this API doc, users can :
 
 ### Backend
 
-For the backend, we have made use of **Vercel** since it is an optimal technology, easy to use, and helps with separation of concerns. This is particularly useful because we want to prevent the entire system from failing if either the backend or frontend experiences an issue. By separating both ecosystems, management becomes much more efficient.
-
-The main reason we chose Vercel is because it makes our APIs available to other teams, facilitating integration into their systems without relying on Azure deployment. Vercel is more user-friendly and has a gentler learning curve compared to Azure, which can often be more complex. Additionally, adding both the frontend and backend to Azure would increase the complexity of the project, which is not ideal.
+For the backend we have made use of **Vercel**, since it is an optimal technology, easy to use, and helps with separations of concerns. This becomes handy because we do not want the whole system to fail if either the backend or the frontend fails, as such, separating both ecosystems makes management way more efficient.
+The main reason we used Vercel was because it makes our apis available to other teams and helps integrating into their system without depending on the Azure deployment.
+Vercel is way more user friendly and provides a better learning curve than Azure, which can often be a bit complex, and if we had to add both the frontend and backend to Azure, we would add more complexity to our project which is not optimal.
 
 ### Frontend
 
-For the frontend, we used **Azure** because it is a technology we are more familiar with. While we used Vercel for the backend, Azure is sufficient for deploying the frontend.
-
-In this approach, we aimed to use familiar, new, and optimal technologies, taking into consideration the integration with other teams.
+For the frontend we simple used **Azure** since it is a technology that we are more familiar with, and even though we used Vercel for the backend, Azure suffices when it comes to deploying the frontend.
+Here we have taken into consideration the use of familiar, new and optimal technologies, trying to consider the integration with other groups.
 
 ### APIs
 
-As mentioned before, our APIs are deployed using **Vercel** for the backend. This allows us to have live links to integrate with other teams when necessary.
+As specified before, our APIs are being deployed using Vercel for the backend, and this helps us get our links live to integrate with other groups if need.
+The first **external API** is the /getLocations, which is used to get the buildings on campus, and it can be integrated by using this link: 
+https://api-campus-transport.vercel.app/getLocations
 
-#### External API
+#### The internal API
+
+(GET):
+https://api-campus-transport.vercel.app/getRent
+https://api-campus-transport.vercel.app/getEvents
+https://api-campus-transport.vercel.app/getSchedule
+(POST):
+https://api-campus-transport.vercel.app/complete-rent/${UID}/${item}
+https://api-campus-transport.vercel.app/rent/${UID}/${item}/${location}
+https://api-campus-transport.vercel.app/event/${UID}/${item}/${location}
+
+**/getRent**: gets all the items available for renting, and their info.
+**/getEvents**: gets all the items available for renting at events, the event itself and their info.
+**/getSchedule**: gets the bus schedule, specifically the ones leaving and coming into campus.
+**/rent**: adds the rented item to the users collection, and links to the user that rented the item.
+**/event**: adds the rented item to the users collection, and links to the user that rented the item (rental at events).
+**/complete-rent**: updates the users collection on a cancel/complete rental, where it deletes the added fields, item and location (both of the rented item), and increases the availability of the items in that particular station. 
+The post **APIs** will take as arguments the user id and the rented item id as well.
+The **drop-off items** feature on the stations makes use of the **/complete-rent** api.
+
+
+####API optimisation
+
+For the optimisation we add to ensure that the apis are only being fetched once from the firestore database and then stored in a session storage, or local storage, in order to avoid calling the api on every refresh or moves between tabs.
+ Some apis such as the **/getRent** and **/getSchedule** do not make use of this functionality since we are considering the constant updates that come from different users, and the dynamic updates on the schedules based on the time of the day.
+
+ **Recommend using axios for the APIs.**
+
 - **/getLocations**: Used to retrieve campus buildings, and can be accessed through the following link:  
   `https://api-campus-transport.vercel.app/getLocations`
 
